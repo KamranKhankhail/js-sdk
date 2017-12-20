@@ -10,7 +10,7 @@ class StorageFactory {
 
   async set(key, value) {
       try{
-          AsyncStorage.setItem(key, value).then(res => res)
+          return await AsyncStorage.setItem(key, value)
       }catch (error){
           return error;
       }
@@ -18,15 +18,15 @@ class StorageFactory {
 
   async get(key) {
       try{
-          AsyncStorage.getItem(key).then(item => item);
+          return await AsyncStorage.getItem(key);
       }catch (err){
           return err
       }
   }
 
-  delete(key) {
+  async delete(key) {
       try{
-          AsyncStorage.removeItem(key).then(res => res);
+          return await AsyncStorage.removeItem(key);
       }catch (err){
           return err;
       }
