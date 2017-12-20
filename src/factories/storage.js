@@ -6,15 +6,7 @@ import {
 } from 'react-native';
 
 class StorageFactory {
-  constructor() {
-    if (typeof localStorage === 'undefined' || localStorage === null) {
-      const LocalStorage = require('node-localstorage').LocalStorage;
-
-      this.localStorage = new LocalStorage('./localStorage');
-    } else {
-      this.localStorage = window.localStorage;
-    }
-  }
+  constructor() {}
 
   async set(key, value) {
       try{
